@@ -3,29 +3,21 @@ type MapData = {
     width: number;
     height: number;
   };
-  cities: City[];
-  roads: Road[];
-};
-
-type City = {
-  name: string;
-  size: number;
-  position: {
-    x: number;
-    y: number;
-  };
-  distances: Record<string, number>;
-};
-
-type Road = {
-  id: number;
-  tiles: { x: number; y: number }[];
+  cities: {
+    name: string;
+    size: number;
+    position: Vec2;
+    distances: Record<string, number>;
+  }[];
+  roads: {
+    id: number;
+    tiles: Vec2[];
+  }[];
 };
 
 const solveTask2 = async () => {
   const res = await fetchTask(2);
   console.log('Response:', res);
-  //window.open(url + res.data.description, '_blank');
   let answerData: any[] = [];
 
   function calculateCityRoadCount(map: MapData): [number, number, number] {
@@ -44,4 +36,4 @@ const solveTask2 = async () => {
   console.log(result);
 };
 
-//solveTask2();
+initTaskButton(2, solveTask2);

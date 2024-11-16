@@ -1,6 +1,6 @@
 type IntersectionParams = {
   map: {
-    roads: { id: number; tiles: { x: number; y: number }[] }[];
+    roads: { id: number; tiles: Vec2[] }[];
   };
   road_id: number;
 };
@@ -33,4 +33,4 @@ const solveTask4 = async () => {
   console.log(result);
 };
 
-solveTask4();
+initTaskButton(4, solveTask4);
