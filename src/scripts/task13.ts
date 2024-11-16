@@ -4,12 +4,9 @@ const solveTask13 = async () => {
   let answerData: any[] = [];
   res.data.questions.forEach((question) => {
     const { params } = question;
-
     const startingCity = params.map.cities.find((city: any) => city.name === params.starting_city);
-
     const fullTour = [startingCity.name, ...params.tour];
 
-    //let distance = maxDistance;
     let battery = params.battery_size;
     let i = 0;
 
@@ -26,10 +23,8 @@ const solveTask13 = async () => {
     }
 
     const result = i + 1 === fullTour.length ? -1 : i;
-
     console.log(params.battery_size, startingCity, fullTour, fullTour[i]);
     console.log(result);
-
     answerData.push({ id: question.ID, answer: result });
   });
 

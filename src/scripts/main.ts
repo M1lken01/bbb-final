@@ -1,4 +1,3 @@
-const teamcode = '173b257fb4c47eb4a9e6';
 const url = 'http://bitkozpont.mik.uni-pannon.hu/2024/';
 
 type Vec2 = { x: number; y: number };

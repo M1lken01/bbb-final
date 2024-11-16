@@ -1,6 +1,8 @@
 /dist
 /node_modules
 
+/src/scripts/env.ts
+
 .DS_Store
 .env
 *.log
